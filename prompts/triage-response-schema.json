@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "core_issue",
+    "identifiers",
+    "billing",
+    "affected_scope",
+    "urgency_signals",
+    "urgency_level",
+    "category_rationale",
+    "category",
+    "priority",
+    "confidence",
+    "summary"
+  ],
+  "properties": {
+    "core_issue": {
+      "type": "string",
+      "description": "One sentence: what the customer needs or what is wrong."
+    },
+    "identifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["account_ids", "invoice_numbers", "error_codes", "urls", "other"],
+      "properties": {
+        "account_ids": { "type": "array", "items": { "type": "string" } },
+        "invoice_numbers": { "type": "array", "items": { "type": "string" } },
+        "error_codes": { "type": "array", "items": { "type": "string" } },
+        "urls": { "type": "array", "items": { "type": "string" } },
+        "other": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "billing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["billed_amount", "expected_amount", "currency"],
+      "properties": {
+        "billed_amount": { "type": ["number", "null"] },
+        "expected_amount": { "type": ["number", "null"] },
+        "currency": { "type": ["string", "null"] }
+      }
+    },
+    "affected_scope": {
+      "type": "string",
+      "enum": ["single_user", "single_account", "multiple_users", "all_users", "unknown"]
+    },
+    "urgency_signals": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Verbatim phrases from the message that indicate urgency or impact. Empty if none."
+    },
+    "urgency_level": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "category_rationale": {
+      "type": "string",
+      "description": "One sentence citing the evidence for the category."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Bug Report", "Feature Request", "Billing Issue", "Technical Question", "Incident/Outage"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "0.0-1.0 confidence in the category, per the rubric."
+    },
+    "summary": {
+      "type": "string",
+      "description": "2-3 sentences for the receiving team: the reported issue or request with its concrete details, then the action the customer wants. Only facts from the message; never describe missing information or these output fields."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[
+  { "id": "Q1", "source": "email", "message": "Since this morning SAML login returns error AUTH-17 for me only. My username is dana.k.",
+    "expected_queue": "Engineering" },
+  { "id": "Q2", "source": "web_form", "message": "It would help a lot if reports could be scheduled to be emailed to our managers every Monday.",
+    "expected_queue": "Product" },
+  { "id": "Q3", "source": "support_portal", "message": "We were charged twice for September: invoices INV-5521 and INV-5522 are both $420. Please refund one of them.",
+    "expected_queue": "Billing" },
+  { "id": "Q4", "source": "email", "message": "Does the API support pagination on the /v2/events endpoint? We need to pull about 50k records a day.",
+    "expected_queue": "Technical Support" },
+  { "id": "Q5", "source": "web_form", "message": "Nobody at our company can open the app since 10:15 UTC, it just keeps spinning.",
+    "expected_queue": "Human Review" },
+  { "id": "Q6", "source": "email", "message": "Hello.",
+    "expected_queue": "Human Review" }
+]

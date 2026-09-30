@@ -1,0 +1,20 @@
+[
+  {
+    "id": "E1",
+    "purpose": "Keyword safety net: explicit all-users outage wording (OUTAGE_KEYWORDS + expected INCIDENT)",
+    "source": "support_portal",
+    "message": "URGENT: the whole platform is down for all users since 08:10 UTC. Nobody in our company can log in."
+  },
+  {
+    "id": "E2",
+    "purpose": "Billing error above threshold: $2,150 billed vs $1,500 expected -> discrepancy 650 > 500 (BILLING_OVER_500)",
+    "source": "email",
+    "message": "Our invoice INV-20431 was for $2,150 but our agreed monthly price is $1,500. Please correct it before the payment run on Friday."
+  },
+  {
+    "id": "E3",
+    "purpose": "Invalid input: empty message after trimming -> HTTP 400, no LLM call",
+    "source": "web_form",
+    "message": "   "
+  }
+]

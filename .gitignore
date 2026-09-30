@@ -1,0 +1,22 @@
+# Secrets - never commit
+.env
+*.env
+*.key
+*.pem
+secrets/
+
+# Assessment brief and local tool state
+docs/assessment/
+*.docx
+*.pdf
+.claude/
+
+# n8n local state (credentials + encryption key) lives in the user profile (~/.n8n) - never copy it here
+.n8n/
+
+# Scratch / test artefacts
+output/write-test.jsonl
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
